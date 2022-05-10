@@ -1,5 +1,3 @@
-console.log('Welcome');
-
 // Initialize the variables
 let songIndex = 0;
 let audioElement = new Audio('/songs/1.mp3');
@@ -64,37 +62,41 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) =>
         songIndex = parseInt(e.target.id);
         e.target.classList.remove('fa-play');
         e.target.classList.add('fa-pause');
-        audioElement.src = `songs/${songIndex+1}.mp3`;
+        masterSongName.innerText = songs[songIndex].songName;
+        audioElement.src = `/Spotify-Clone/songs/${songIndex + 1}.mp3`;
         audioElement.currentTime = 0;
         audioElement.play();
+        gif.style.opacity = 1;
         masterPlay.classList.remove('fa-play');
         masterPlay.classList.add('fa-pause');
     })
 })
 
-document.getElementById('next').addEventListener(('click'), ( )=> {
-    if(songIndex > 9){
+document.getElementById('next').addEventListener(('click'), () => {
+    if (songIndex > 9) {
         songIndex = 0;
     }
-    else{
+    else {
         songIndex += 1;
     }
-    audioElement.src = `songs/${songIndex+1}.mp3`;
-        audioElement.currentTime = 0;
-        audioElement.play();
-        masterPlay.classList.remove('fa-play');
-        masterPlay.classList.add('fa-pause');
+    audioElement.src = `/Spotify-Clone/songs/${songIndex + 1}.mp3`;
+    masterSongName.innerText = songs[songIndex].songName;
+    audioElement.currentTime = 0;
+    audioElement.play();
+    masterPlay.classList.remove('fa-play');
+    masterPlay.classList.add('fa-pause');
 })
-document.getElementById('previous').addEventListener(('click'), ( )=> {
-    if(songIndex <= 0){
+document.getElementById('previous').addEventListener(('click'), () => {
+    if (songIndex <= 0) {
         songIndex = 9;
     }
-    else{
+    else {
         songIndex -= 1;
     }
-    audioElement.src = `songs/${songIndex+1}.mp3`;
-        audioElement.currentTime = 0;
-        audioElement.play();
-        masterPlay.classList.remove('fa-play');
-        masterPlay.classList.add('fa-pause');
+    audioElement.src = `/Spotify-Clone/songs/${songIndex + 1}.mp3`;
+    masterSongName.innerText = songs[songIndex].songName;
+    audioElement.currentTime = 0;
+    audioElement.play();
+    masterPlay.classList.remove('fa-play');
+    masterPlay.classList.add('fa-pause');
 })
