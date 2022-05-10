@@ -1,3 +1,5 @@
+console.log('Welcome');
+
 // Initialize the variables
 let songIndex = 0;
 let audioElement = new Audio('/songs/1.mp3');
@@ -13,7 +15,7 @@ let songs = [
     { songName: "Different Heaven & EH!DE - My Heart [NCS Release]", filePath: "/Spotify-Clone/songs/4.mp3", coverPath: "/Spotify-Clone/covers/4.jpg" },
     { songName: "Janji-Heroes-Tonight-feat-Johnning-NCS-Release", filePath: "/Spotify-Clone/songs/5.mp3", coverPath: "/Spotify-Clone/covers/5.jpg" },
     { songName: "Rabba - Salam-e-Ishq", filePath: "/Spotify-Clone/songs/6.mp3", coverPath: "/Spotify-Clone/covers/6.jpg" },
-    { songName: "Sakhiyaan - Salam-e-Ishq", filePath: "/Spotify-Clone/songs/7.mp3", coverPath: "/Spotify-Clone/covers/7.jpg" },
+    { songName: "Sakhiyaan - Salam-e-Ishq", filePath: "/songs/7.mp3", coverPath: "/Spotify-Clone/covers/7.jpg" },
     { songName: "Bhula Dena - Salam-e-Ishq", filePath: "/Spotify-Clone/songs/8.mp3", coverPath: "/Spotify-Clone/covers/8.jpg" },
     { songName: "Tumhari Kasam - Salam-e-Ishq", filePath: "/Spotify-Clone/songs/9.mp3", coverPath: "/Spotify-Clone/covers/9.jpg" },
     { songName: "Na Jaana - Salam-e-Ishq", filePath: "/Spotify-Clone/songs/10.mp3", coverPath: "/Spotify-Clone/covers/10.jpg" },
@@ -63,7 +65,7 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) =>
         e.target.classList.remove('fa-play');
         e.target.classList.add('fa-pause');
         masterSongName.innerText = songs[songIndex].songName;
-        audioElement.src = `/Spotify-Clone/songs/${songIndex + 1}.mp3`;
+        audioElement.src = `songs/${songIndex + 1}.mp3`;
         audioElement.currentTime = 0;
         audioElement.play();
         gif.style.opacity = 1;
@@ -79,7 +81,7 @@ document.getElementById('next').addEventListener(('click'), () => {
     else {
         songIndex += 1;
     }
-    audioElement.src = `/Spotify-Clone/songs/${songIndex + 1}.mp3`;
+    audioElement.src = `songs/${songIndex + 1}.mp3`;
     masterSongName.innerText = songs[songIndex].songName;
     audioElement.currentTime = 0;
     audioElement.play();
@@ -93,7 +95,7 @@ document.getElementById('previous').addEventListener(('click'), () => {
     else {
         songIndex -= 1;
     }
-    audioElement.src = `/Spotify-Clone/songs/${songIndex + 1}.mp3`;
+    audioElement.src = `songs/${songIndex + 1}.mp3`;
     masterSongName.innerText = songs[songIndex].songName;
     audioElement.currentTime = 0;
     audioElement.play();
