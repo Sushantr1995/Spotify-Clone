@@ -2,7 +2,7 @@ console.log('Welcome');
 
 // Initialize the variables
 let songIndex = 0;
-let audioElement = new Audio('/songs/1.mp3');
+let audioElement = new Audio('/Spotify-Clone/songs/1.mp3');
 let masterPlay = document.getElementById('masterPlay');
 let myProgressBar = document.getElementById('myProgressBar');
 let gif = document.getElementById('gif');
@@ -65,7 +65,7 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) =>
         e.target.classList.remove('fa-play');
         e.target.classList.add('fa-pause');
         masterSongName.innerText = songs[songIndex].songName;
-        audioElement.src = `songs/${songIndex + 1}.mp3`;
+        audioElement.src = `/Spotify-Clone/songs/${songIndex + 1}.mp3`;
         audioElement.currentTime = 0;
         audioElement.play();
         gif.style.opacity = 1;
@@ -81,7 +81,7 @@ document.getElementById('next').addEventListener(('click'), () => {
     else {
         songIndex += 1;
     }
-    audioElement.src = `songs/${songIndex + 1}.mp3`;
+    audioElement.src = `/Spotify-Clone/songs/${songIndex + 1}.mp3`;
     masterSongName.innerText = songs[songIndex].songName;
     audioElement.currentTime = 0;
     audioElement.play();
@@ -95,7 +95,7 @@ document.getElementById('previous').addEventListener(('click'), () => {
     else {
         songIndex -= 1;
     }
-    audioElement.src = `songs/${songIndex + 1}.mp3`;
+    audioElement.src = `/Spotify-Clone/songs/${songIndex + 1}.mp3`;
     masterSongName.innerText = songs[songIndex].songName;
     audioElement.currentTime = 0;
     audioElement.play();
